@@ -36,6 +36,8 @@ def train(game, model, target_net, epochs, verbose=1):
     flag = 0
     model = model.to(device)
     optimizer = optim.Adam(model.parameters(), lr=1e-3)
+    total_count = 0
+    win_cnt = 0
     for e in range(epochs):
         loss_total = 0.
         epsilon = 4 / ((e + 1) ** (1 / 2))
@@ -73,13 +75,14 @@ def train(game, model, target_net, epochs, verbose=1):
                 else:
                     # Choose yourself
                     # q contains the expected rewards for the actions
-                    input_tm1 = torch.from_numpy(input_tm1).float()
+                    input_tm1 = torch.Tensor(input_tm1).float()
                     q = model(input_tm1)
                     # We pick the action with the highest expected reward
                     action = np.argmax(q.data.cpu().numpy())
                 counting += 1
                 # apply action, get rewards and new state
                 input_t, reward = game.act(action)
+                total_count += 1
                 # If we managed to catch the fruit we add 1 to our win counter
                 if reward == 1:
                     win_cnt += 1
@@ -132,5 +135,5 @@ def train(game, model, target_net, epochs, verbose=1):
         if verbose > 0:
             print("Epoch {:03d}/{:03d} | Loss {:.4f} | Win count {}".format(e, epochs, loss_total, win_cnt))
         save_model(model)
-        win_hist.append(win_cnt)
+        win_hist.append(win_cnt/total_count)
     return win_hist

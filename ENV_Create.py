@@ -150,7 +150,7 @@ class FIFA(object):
             # They will not be affected by training (since the training loss for them is 0)
             # state_t = self.transform_numpy(state_t)
             # state_t = Variable(torch.from_numpy(state_t))
-            state_t = torch.from_numpy(state_t).float()
+            state_t = torch.Tensor(state_t).float()
             with torch.no_grad():
                 targets[i] = model(state_t)
 
@@ -160,7 +160,7 @@ class FIFA(object):
             Otherwise the target value is r + gamma * max Q(s’,a’)
             """
             #  Here Q_sa is max_a'Q(s', a')
-            state_tp1 = torch.from_numpy(state_tp1).float()
+            state_tp1 = torch.Tensor(state_tp1).float()
             with torch.no_grad():
                 action_tp1 = np.argmax(model(state_tp1).numpy())
                 Q_sa = target_net(state_tp1).numpy()[0][action_tp1]

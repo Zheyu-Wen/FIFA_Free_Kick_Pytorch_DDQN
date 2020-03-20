@@ -9,12 +9,6 @@ from test import test
 from Network_model import *
 
 
-def moving_average_diff(a, n=100):
-    diff = np.diff(a)
-    ret = np.cumsum(diff, dtype=float)
-    ret[n:] = ret[n:] - ret[:-n]
-    return ret[n - 1:] / n
-
 
 def load_model():
 
@@ -53,6 +47,6 @@ else:
 
 print(hist)
 np.savetxt('win_history.txt', hist)
-plt.plot(moving_average_diff(hist))
+plt.plot(np.arange(0,epoch,1),hist)
 plt.ylabel('Average of victories per game')
 plt.show()

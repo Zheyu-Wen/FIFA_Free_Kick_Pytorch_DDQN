@@ -34,6 +34,8 @@ def test(game, model, n_games, verbose=1):
         else:
             paused = False
         counting = 0
+        win_cnt = 0
+        total_count = 0
         while not game_over:
             if not paused:
                 # The learner is acting on the last observed game screen
@@ -53,7 +55,7 @@ def test(game, model, n_games, verbose=1):
                 # Choose yourself
                 # q contains the expected rewards for the actions
                 print("begin predict q value")
-                input_tm1 = torch.from_numpy(input_tm1).float()
+                input_tm1 = torch.Tensor(input_tm1).float()
                 with torch.no_grad():
                     q = model(input_tm1)
                 # We pick the action with the highest expected reward
@@ -62,6 +64,7 @@ def test(game, model, n_games, verbose=1):
                 counting += 1
                 # apply action, get rewards and new state
                 input_t, reward, game_over = game.act(action)
+                total_count += 1
                 # If we managed to catch the fruit we add 1 to our win counter
                 if reward == 1:
                     win_cnt += 1
@@ -89,5 +92,5 @@ def test(game, model, n_games, verbose=1):
                 game_over = True
         if verbose > 0:
             print("Game {:03d}/{:03d} | Win count {}".format(e, n_games, win_cnt))
-        win_hist.append(win_cnt)
+        win_hist.append(win_cnt/total_count)
     return win_hist
