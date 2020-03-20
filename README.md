@@ -1,4 +1,5 @@
 # FIFA_Free_Kick_Pytorch_DDQN
+This repository is for final project of EECS 545 WN
 This is pytorch environment Reinforcement Learning algorithm application in FIFA soccer game--free kick skill game.
 Mainly used package:
 numpy, torch, pytesseract(need tesseract installed), keyboard.
