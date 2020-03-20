@@ -5,8 +5,7 @@ numpy, torch, pytesseract(need tesseract installed), keyboard.
 
 Acknowledgement: https://towardsdatascience.com/using-deep-q-learning-in-fifa-18-to-perfect-the-art-of-free-kicks-f2e4e979ee66.
 
-Thanks for his idea and github code. I start from this code and apply more advanced method.
-Maybe in the future, I will also explore to train AI playing true soccer game in FIFA.
+Thanks for his idea and github code. I start from this code and apply more advanced method. I also tried to program for the whole game in FIFA, people who are interested in that can see the code in my another repository https://github.com/CoderNoMercy/FIFA_PLAY_WHOLE_GAME
 
 Below is the algorithm's detail:
 Thanks for this github's detailed illustration https://github.com/fg91/Deep-Q-Learning (in his jupyter notebook). My method is basically the same with him but a different application and a different neural network architecture. 
