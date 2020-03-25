@@ -11,3 +11,5 @@ script:
   - python Network_model.py
   - python test.py
   - python train.py
+
+install: pip install --user -r requirements.txt
