@@ -1,5 +1,6 @@
 # FIFA_Free_Kick_Pytorch_DDQN
-#Introduction:
+
+# Introduction:
 
 This repository is for final project of EECS 545 WN.
 It is a pytorch environment Reinforcement Learning algorithm application in FIFA soccer game--free kick skill game.
