@@ -1,14 +1,15 @@
 # FIFA_Free_Kick_Pytorch_DDQN
-Introduction:
+#Introduction:
 
-This repository is for final project of EECS 545 WN. \\
+This repository is for final project of EECS 545 WN.
 It is a pytorch environment Reinforcement Learning algorithm application in FIFA soccer game--free kick skill game.
 
 Mainly used package:
 
 numpy, torch, pytesseract(need tesseract installed), keyboard.
 
-Acknowledgement: https://towardsdatascience.com/using-deep-q-learning-in-fifa-18-to-perfect-the-art-of-free-kicks-f2e4e979ee66.
+Acknowledgement:
+https://towardsdatascience.com/using-deep-q-learning-in-fifa-18-to-perfect-the-art-of-free-kicks-f2e4e979ee66.
 
 Thanks for his idea and github code. I start from this code and apply more advanced method. After I finished this project, I also tried to program for the whole game in FIFA, people who are interested in that can see the code in my another repository https://github.com/CoderNoMercy/FIFA_PLAY_WHOLE_GAME
 
@@ -42,4 +43,15 @@ There should be a plot showing the rate of winning during training. You may find
 
 The training will continue for at least 8 hours or so.
 
+# File instruction
+
+ENV_Creature.py is the most important part in this project since it establish an env for the game under condition that we don't have access to the game code.
+
+Keyboard_mapping_and_screen_shot.py is doing a mapping from keyboard to system, which lets AI to play for you through keyboard
+
+Network_model.py build network for training. In DDQN, we need two network, one is target nework and another is main network. They share the same structure. Main network gives appropriate action and target network returns Q-value.
+
+test.py is for testing after training.
+
+train.py is for training. It is default set in main.py
 
