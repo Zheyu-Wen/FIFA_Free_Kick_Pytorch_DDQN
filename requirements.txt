@@ -1,0 +1,13 @@
+pytesseract
+PIL
+numpy
+time
+torch
+torchvision
+matplotlib
+ctypes
+time
+pyautogui
+cv2
+os
+pynput
