@@ -1,4 +1,3 @@
-https://img.shields.io/travis/com/CoderNoMercy/FIFA_Free_Kick_Pytorch_DDQN
 # FIFA_Free_Kick_Pytorch_DDQN
 
 This repository is for final project of EECS 545 WN. \\
