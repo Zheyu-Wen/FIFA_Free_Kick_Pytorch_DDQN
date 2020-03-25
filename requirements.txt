@@ -1,6 +1,5 @@
 pytesseract
 numpy
-time
 torch
 torchvision
 matplotlib
