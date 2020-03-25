@@ -4,6 +4,5 @@ time
 torch
 torchvision
 matplotlib
-time
 pyautogui
 pynput
