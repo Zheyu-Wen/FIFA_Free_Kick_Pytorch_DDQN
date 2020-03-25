@@ -9,5 +9,4 @@ ctypes
 time
 pyautogui
 cv2
-os
 pynput
