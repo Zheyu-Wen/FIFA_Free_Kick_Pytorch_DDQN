@@ -5,9 +5,9 @@ python:
 
 script: 
 
-  - ENV_Create.py
-  - Keyboard_mapping_and_screen_shot.py
-  - main.py
-  - Network_model.py
-  - test.py
-  - train.py
+  - python ENV_Create.py
+  - python Keyboard_mapping_and_screen_shot.py
+  - python main.py
+  - python Network_model.py
+  - python test.py
+  - python train.py
