@@ -1,1 +1,13 @@
 language: python
+python:
+
+  - "3.6"
+
+script: 
+
+  - ENV_Create.py
+  - Keyboard_mapping_and_screen_shot.py
+  - main.py
+  - Network_model.py
+  - test.py
+  - train.py
