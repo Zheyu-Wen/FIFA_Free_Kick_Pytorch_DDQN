@@ -8,5 +8,5 @@ matplotlib
 ctypes
 time
 pyautogui
-cv2
+opencv
 pynput
