@@ -14,3 +14,4 @@ script:
 
 install: 
   - pip install -r requirements.txt
+  - pip isntall opencv-python
